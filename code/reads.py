@@ -83,3 +83,6 @@ def get_team_details(con: pymysql.connections.Connection, tname: str, DEBUG=Fals
     row["Textbook"] = [row["Textbook"] for row in ret]
     return row
 
+
+def get_channel_details_from_team(con: pymysql.connections.Connection, tname: str, chname:str, DEBUG=False):
+    ret = general_get_details(con, "*", "CHANNEL", "Team")
