@@ -68,7 +68,7 @@ def insert_team(con, row: dict, DEBUG=False):
         return ret
     for tb in row["Textbook"]:
         tmp_row = {
-            "Team_name": row["Team_row"],
+            "Team_name": row["Team_name"],
             "Textbook": tb
         }
         ret = general_insertion(con, "TEXTBOOK", tmp_row, DEBUG)

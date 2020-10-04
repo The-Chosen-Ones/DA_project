@@ -44,6 +44,7 @@ validators = {
 validators["Sup_id"] = validators["Email_id"]
 validators["Org_id"] = validators["Email_id"]
 validators["Member_id"] = validators["Email_id"]
+validators["Admin_id"] = validators["Email_id"]
 validators["Inst_Email_id"] = validators["Email_id"]
 validators["Start_time"] = validators["Time"]
 validators["End_time"] = validators["Time"]
