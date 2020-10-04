@@ -1,4 +1,6 @@
 Attributes = {}
+SUCCESS_CODE = "success"
+ERROR_CODE = "error"
 
 Attributes["ACCOUNT"] = [
     "Email_id",

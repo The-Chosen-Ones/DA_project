@@ -1,4 +1,5 @@
 import pymysql
+from db_description import SUCCESS_CODE
 
 
 def delete_account(con, email: str, DEBUG=False):
@@ -11,7 +12,7 @@ def delete_account(con, email: str, DEBUG=False):
             con.commit()
         except Exception as e:
             con.rollback()
-            print("Failed to update marks")
+            print("Failed to delete account")
             print(">>>>>>>>>>>>>", e)
             return str(e)
-    return "success"
+    return SUCCESS_CODE

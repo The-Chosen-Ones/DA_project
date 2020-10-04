@@ -2,9 +2,6 @@ import pymysql
 from validation import check_valid
 from db_description import *
 
-SUCCESS_CODE = "success"
-ERROR_CODE = "error"
-
 
 def general_insertion(con, table: str, row: dict, DEBUG=False):
     for i in row.keys():

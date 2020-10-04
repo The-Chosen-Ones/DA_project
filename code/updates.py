@@ -1,5 +1,6 @@
 import pymysql
 from validation import check_valid
+from db_description import SUCCESS_CODE
 
 
 def update_marks(con, q_id, ans, new_marks, DEBUG=False):
@@ -19,7 +20,7 @@ def update_marks(con, q_id, ans, new_marks, DEBUG=False):
             print("Failed to update marks")
             print(">>>>>>>>>>>>>", e)
             return str(e)
-    return "success"
+    return SUCCESS_CODE
 
 
 def update_address(con, email, old_add, new_add, DEBUG=False):
@@ -36,10 +37,10 @@ def update_address(con, email, old_add, new_add, DEBUG=False):
             con.commit()
         except Exception as e:
             con.rollback()
-            print("Failed to update marks")
+            print("Failed to update address")
             print(">>>>>>>>>>>>>", e)
             return str(e)
-    return "success"
+    return SUCCESS_CODE
 
 
 def update_mobile(con, email, new_mob, DEBUG=False):
@@ -56,7 +57,7 @@ def update_mobile(con, email, new_mob, DEBUG=False):
             con.commit()
         except Exception as e:
             con.rollback()
-            print("Failed to update marks")
+            print("Failed to update mobile")
             print(">>>>>>>>>>>>>", e)
             return str(e)
-    return "success"
+    return SUCCESS_CODE
