@@ -21,6 +21,11 @@ Attributes["INSTRUCTOR"] = [
     "Sup_id",
 ]
 
+Attributes["DEGREE"] = [
+    "Email_id",
+    "Degree"
+]
+
 Attributes["STUDENT"] = [
     "Email_id",
     "Roll_no",
