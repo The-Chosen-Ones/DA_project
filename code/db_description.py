@@ -54,7 +54,7 @@ Attributes["ATTENDS"] = [
     "Team_name",
     "Channel_name",
     "Org_id",
-    "Email_id"
+    "SRoll_no"
 ]
 
 Attributes["MEMBERSHIP"] = [
@@ -63,7 +63,7 @@ Attributes["MEMBERSHIP"] = [
 ]
 
 Attributes["GIVES"] = [
-    "Email_id",
+    "SRoll_no",
     "Quiz_no",
     "Course_name"
 ]
@@ -84,7 +84,7 @@ Attributes["RESPONSE"] = [
     "Quiz_no",
     "Course_name",
     "Q_id",
-    "Email_id",
+    "SRoll_no",
     "Inst_Email_id",
     "Answer"
 ]
