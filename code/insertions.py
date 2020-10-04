@@ -14,7 +14,7 @@ def general_insertion(con, table: str, row: dict, DEBUG=False):
             query += "{},".format(attr)
         query = query[:-1] + ") VALUES("
         for attr in Attributes[table]:
-            query += "{},".format(row[attr])
+            query += "\"{}\",".format(row[attr])
         query = query[:-1] + ")"
         if DEBUG:
             print(query)
@@ -33,13 +33,13 @@ def insert_acccount(con, row: dict, subclass, DEBUG=False):
     if subclass not in {"INSTRUCTOR", "STUDENT"}:
         return "error in subclass"
 
-    for tb in {"ACCOUNT", subclass}:
+    for tb in ["ACCOUNT", subclass]:
         tmp_row = {x: row[x] for x in Attributes[tb]}
         ret = general_insertion(con, tb, tmp_row, DEBUG)
         if ret != SUCCESS_CODE:
             return ret
 
-    for add in row["ADDRESS"]:
+    for add in row["Address"]:
         tmp_row = {
             "Email_id": row["Email_id"],
             "Address": add,

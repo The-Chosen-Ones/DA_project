@@ -19,7 +19,7 @@ validators = {
     "Family_name": validate_text,
     "Email_id": validate_email,
     "Password": lambda val: validate_text(val, sizemin=8, sizemax=15, alnum=True),
-    "Mobile": lambda x: type(x) == int and len(str(x)) == 10,
+    "Mobile": lambda x: len(x) == 10,
     "Sex": lambda x: x in {'M', 'F', 'O'},
     "Address": validate_text,
     "Degree": validate_text,
