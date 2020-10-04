@@ -23,7 +23,7 @@ def update_marks(con, q_id, ans, new_marks, DEBUG=False):
 
 
 def update_address(con, email, old_add, new_add, DEBUG=False):
-    for attr, val in {"Email_id":  email, "Address": old_add, "Address": new_add}.items():
+    for attr, val in {("Email_id",  email), ("Address", old_add), ("Address", new_add)}:
         if not check_valid(attr, val):
             return f"error in checking of ({attr} : {val})"
     query = f"UPDATE ADDRESS SET Address = {new_add} WHERE Email_id = {email} AND Address= {old_add}"
