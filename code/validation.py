@@ -9,7 +9,7 @@ def validate_text(text: str, sizemin=0, sizemax=80, alnum=False) -> bool:
     return True if type(text) == str and sizemin <= len(text) <= sizemax and (not alnum or text.isalnum()) else False
 
 
-def check_validate(type: str, val) -> bool:
+def check_valid(type: str, val) -> bool:
     return validators[type](val)
 
 

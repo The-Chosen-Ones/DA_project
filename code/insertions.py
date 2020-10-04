@@ -1,5 +1,5 @@
 import pymysql
-from validation import check_validate
+from validation import check_valid
 from db_description import *
 
 SUCCESS_CODE = "success"
@@ -8,7 +8,7 @@ ERROR_CODE = "error"
 
 def general_insertion(con, table: str, row: dict, DEBUG=False):
     for i in row.keys():
-        if not check_validate(i, row[i]):
+        if not check_valid(i, row[i]):
             return "error in {} validation".format(i)
 
     with con.cursor() as cur:
@@ -114,4 +114,8 @@ def insert_quiz(con, row: dict, DEBUG=False):
 
 
 def insert_question(con, row: dict, DEBUG=False):
+    return general_insertion(con, "QUESTION", row, DEBUG)
+
+
+def insert_address(con, row: dict, DEBUG=False):
     return general_insertion(con, "QUESTION", row, DEBUG)

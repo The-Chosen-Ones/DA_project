@@ -1,4 +1,4 @@
-from validation import validate_email, check_validate
+from validation import validate_email, check_valid
 
 
 def test_email_valid():
@@ -13,12 +13,12 @@ def test_email_valid():
 
 
 def test_gen_valid():
-    assert(check_validate("Sex", 'M'))
-    assert(check_validate("Mobile_number", 9123456780))
-    assert(check_validate("First_name", "Joe"))
-    assert(check_validate("Password", "hiehose08424"))
-    assert(check_validate("Email_id", "hi@bye.com"))
-    assert(not check_validate("Email_id", "hibye.com"))
+    assert(check_valid("Sex", 'M'))
+    assert(check_valid("Mobile_number", 9123456780))
+    assert(check_valid("First_name", "Joe"))
+    assert(check_valid("Password", "hiehose08424"))
+    assert(check_valid("Email_id", "hi@bye.com"))
+    assert(not check_valid("Email_id", "hibye.com"))
     print("Gen validn. tests passed")
 
 
