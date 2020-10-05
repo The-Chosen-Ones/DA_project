@@ -41,6 +41,7 @@ validators = {
     "Percentage_marks": lambda x: 0 <= x <= 100,
 }
 
+validators["SRoll_no"] = validators["Roll_no"]
 validators["Sup_id"] = validators["Email_id"]
 validators["Org_id"] = validators["Email_id"]
 validators["Member_id"] = validators["Email_id"]
