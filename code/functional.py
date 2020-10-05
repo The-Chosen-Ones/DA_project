@@ -4,6 +4,7 @@ from __main__  import cur,con
 # pass me username of the person logged in and whether
 # that person is a Teacher (type = T) or student (type = S)
 
+
 # print course details and preferred textbooks
 def sel1(username, type):
     try:
@@ -31,6 +32,7 @@ def sel1(username, type):
         con.rollback()
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
+
 
 # list members of the team
 def sel2(username, type):
@@ -67,6 +69,7 @@ def sel2(username, type):
         con.rollback()
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
+
 
 # list members of a meeting
 def sel3(username, type):
@@ -110,6 +113,7 @@ def sel3(username, type):
         con.rollback()
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
+
 
 # find marks per question of a quiz
 def sel4(username, type):
@@ -170,6 +174,7 @@ def proj1(username, type):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
+
 # top 10 scoring students in a batch
 def proj2(username, type):
 
@@ -201,6 +206,7 @@ def proj2(username, type):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
+
 # average marks of students in quizzes for the course
 def agg1(username, type):
 
@@ -225,6 +231,7 @@ def agg1(username, type):
         con.rollback()
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
+
 
 # attendance of the student
 def agg2(username, type):
@@ -253,6 +260,7 @@ def agg2(username, type):
         con.rollback()
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
+
 
 # search student details
 def search(username, type):

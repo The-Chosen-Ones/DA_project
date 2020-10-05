@@ -39,7 +39,7 @@ CREATE TABLE `ACCOUNT` (
 
 LOCK TABLES `ACCOUNT` WRITE;
 /*!40000 ALTER TABLE `ACCOUNT` DISABLE KEYS */;
-INSERT INTO `ACCOUNT` VALUES ('ahmad@mail.com','Ahmad','Jabbar','passahma','9827781009','M'),('alecia@mail.com','Alecia','Zeleya','passalec','2123456789','F'),('fank@mail.com','Franklin','Wong','passfran','2023456789','M'),('james@mail.com','James','Borge','passjame','9827781000','M'),('jennifer@mail.com','Jennifer','Wallace','passjenn','2123456009','F'),('joe@mail.com','Joe','Cook','passjoec','9827701000','M'),('john@mail.com','John','Smith','passjohn','1023456789','M'),('joyce@mail.com','Joyce','English','passjoyc','9823334009','F'),('profDA101@mail.com','William','Shaw','passwill','9827701410','M'),('ramesh@mail.com','Ramesh','Narayan','passrame','2123334009','M'),('steve@mail.com','Steve','Gates','passstev','9827701010','M'),('ta_1DA101@mail.com','Sheldon','Cooper','passshel','9817701410','M'),('ta_2DA101@mail.com','Lilly','','passshel','9817703310','F');
+INSERT INTO `ACCOUNT` VALUES ('ahmad@mail.com','Ahmad','Jabbar','passahma','9827781009','M'),('alecia@mail.com','Alecia','Zeleya','passalec','2123456789','F'),('fank@mail.com','Franklin','Wong','passfran','2023456789','M'),('james@mail.com','James','Borge','passjame','9827781000','M'),('jennifer@mail.com','Jennifer','Wallace','passjenn','2123456009','F'),('joe@mail.com','Joe','Cook','passjoec','9827701000','M'),('john@mail.com','John','Smith','passjohn','1023456789','M'),('joyce@mail.com','Joyce','English','passjoyc','9823334009','F'),('profDA101@mail.com','William','Shaw','passwill','9827701410','M'),('ramesh@mail.com','Ramesh','Narayan','passrame','2123334009','M'),('steve@mail.com','Steve','Gates','passstev','9827701010','M'),('ta_1DA101@mail.com','Sheldon','Cooper','passshel','9817701410','M'),('ta_2DA101@mail.com','Lilly','Ashford','passshel','9817703310','F');
 /*!40000 ALTER TABLE `ACCOUNT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,7 +280,7 @@ CREATE TABLE `QUESANS` (
 
 LOCK TABLES `QUESANS` WRITE;
 /*!40000 ALTER TABLE `QUESANS` DISABLE KEYS */;
-INSERT INTO `QUESANS` VALUES (1,'Structured Query Language',10),(2,'Data and analysis',10),(3,'Data and analysis',10),(4,'pymysql',10),(5,'4nf',0),(5,'bcnf',10),(6,'can be',10),(7,'no',0),(7,'yes',10),(8,'no',10),(8,'yes',0),(9,'tuples',0),(10,'no',10),(11,'no',10),(12,'yes',10),(13,'no',10);
+INSERT INTO `QUESANS` VALUES (1,'Structured Query Language',10),(1,'Structured Questioning Language',0),(2,'Data and analysis',10),(2,'Deployment Agency',0),(3,'Data and analysis',10),(3,'Deployment Agency',0),(4,'pymysql',10),(5,'4nf',0),(5,'bcnf',10),(6,'can be',10),(7,'no',0),(7,'yes',10),(8,'no',10),(8,'yes',0),(9,'tuples',0),(10,'no',10),(11,'no',10),(12,'yes',10),(13,'no',10);
 /*!40000 ALTER TABLE `QUESANS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,6 +366,7 @@ CREATE TABLE `RESPONSE` (
 
 LOCK TABLES `RESPONSE` WRITE;
 /*!40000 ALTER TABLE `RESPONSE` DISABLE KEYS */;
+INSERT INTO `RESPONSE` VALUES (1,'CS.301.2020',1,1010202040,'ta_1DA101@mail.com','Structured Query Language'),(1,'CS.301.2020',1,1010604040,'ta_1DA101@mail.com','Structured Query Language'),(1,'CS.301.2020',1,1010604940,'profDA101@mail.com','Structured Query Language'),(1,'CS.301.2020',1,1010604943,'ta_1DA101@mail.com','Structured Query Language'),(1,'CS.301.2020',1,1010202030,'profDA101@mail.com','Structured Questioning Language'),(1,'CS.301.2020',1,1010404040,'ta_1DA101@mail.com','Structured Questioning Language'),(1,'CS.301.2020',2,1010604040,'ta_1DA101@mail.com','Data and analysis'),(1,'CS.301.2020',2,1010604940,'profDA101@mail.com','Data and analysis'),(1,'CS.301.2020',2,1010604943,'ta_1DA101@mail.com','Data and analysis'),(1,'CS.301.2020',2,1010202030,'profDA101@mail.com','Deployment Agency'),(1,'CS.301.2020',3,1010604940,'profDA101@mail.com','Data and analysis'),(1,'CS.301.2020',3,1010202030,'profDA101@mail.com','Deployment Agency'),(1,'CS.301.2020',3,1010202040,'ta_1DA101@mail.com','Deployment Agency'),(1,'CS.301.2020',4,1010404040,'ta_1DA101@mail.com','pymysql'),(1,'CS.301.2020',4,1010604940,'profDA101@mail.com','pymysql'),(1,'CS.301.2020',4,1010604943,'ta_1DA101@mail.com','pymysql'),(1,'CS.301.2020',4,1010605043,'ta_1DA101@mail.com','pymysql'),(1,'CS.301.2020',4,1010605143,'ta_1DA101@mail.com','pymysql'),(1,'CS.301.2020',5,1010404040,'ta_1DA101@mail.com','4nf'),(1,'CS.301.2020',5,1010604940,'profDA101@mail.com','4nf'),(1,'CS.301.2020',5,1010604943,'ta_1DA101@mail.com','4nf'),(1,'CS.301.2020',5,1010605043,'ta_1DA101@mail.com','4nf'),(1,'CS.301.2020',5,1010202040,'ta_1DA101@mail.com','bcnf'),(1,'CS.301.2020',5,1010605143,'ta_1DA101@mail.com','bcnf');
 /*!40000 ALTER TABLE `RESPONSE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -458,4 +459,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-05 20:10:17
+-- Dump completed on 2020-10-05 23:45:46

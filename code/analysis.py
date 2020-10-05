@@ -1,6 +1,7 @@
 import pymysql
 from __main__  import cur,con
 
+
 # Measure effectiveness of online teaching
 def analysis1(username, type):
 
@@ -46,6 +47,7 @@ def analysis1(username, type):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
+
 # Student Report Card
 def analysis2(username, type):
 
@@ -80,6 +82,7 @@ def analysis2(username, type):
         con.rollback()
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
+
 
 # Relation between student's marks and attendance
 def analysis3(username, type):
