@@ -61,7 +61,8 @@ Attributes["ATTENDS"] = [
     "Team_name",
     "Channel_name",
     "Org_id",
-    "SRoll_no"
+    "SRoll_no",
+    "Start_time",
 ]
 
 Attributes["MEMBERSHIP"] = [
