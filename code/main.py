@@ -4,6 +4,8 @@ import pymysql.cursors
 from insertions import *
 from updates import *
 from deletions import *
+from functional import *
+from analysis import *
 
 
 def createAccount():
@@ -211,6 +213,30 @@ def dispatch(ch):
             updateMobile()
         elif(ch == 15):
             deleteAccount()
+        elif(ch == 16):
+            sel1(con)
+        elif(ch == 17):
+            sel2(con)
+        elif(ch == 18):
+            sel3(con)
+        elif(ch == 19):
+            sel4(con)
+        elif(ch == 20):
+            proj1(con)
+        elif(ch == 21):
+            proj2(con)
+        elif(ch == 22):
+            agg1(con)
+        elif(ch == 23):
+            agg2(con)
+        elif(ch == 24):
+            search(con)
+        elif(ch == 25):
+            analysis1(con)
+        elif(ch == 26):
+            analysis2(con)
+        elif(ch == 27):
+            analysis3(con)
         else:
             print("Invalid Option")
 
@@ -220,11 +246,12 @@ def dispatch(ch):
         tmp = input("Enter any key to CONTINUE>")
 
 
+con = []
 while(1):
     tmp = sp.call('clear', shell=True)
 
-    username = input("Enter username:")
-    password = input("Enter password:")
+    username = "pranjai"
+    password = "Pranjai@2606"
     port = input("Enter port num(leave blank for default):")
     if port == "":
         port = 3306
@@ -232,6 +259,7 @@ while(1):
         port = int(port)
 
     try:
+        con
         con = pymysql.connect(host='localhost', user=username, password=password, port=port,
                               db='DfOEP', cursorclass=pymysql.cursors.DictCursor)
         tmp = sp.call('clear', shell=True)
@@ -261,6 +289,18 @@ while(1):
             print("13. Update Address of an Account.")
             print("14. Update Mobile Number of an Account.")
             print("15. Delete an Account.")
+            print("16. Print Course Details and preferred textbooks of a Team.")
+            print("17. List Members of a Team.")
+            print("18. List Members of a Meeting.")
+            print("19. Find Marks per Question of a Quiz.")
+            print("20. Details of all Students in a Batch.")
+            print("21 Top 10 scoring Students in a Batch.")
+            print("22. Average Marks of Students in Quizzes for the Course.")
+            print("23. Attendance of a Student")
+            print("24. Search Student Details.")
+            print("25. Measure effectiveness of online teaching.")
+            print("26. Student Report Card.")
+            print("27. Relation between Student's Marks and Attendance.")
 
             ch = int(input("Enter choice > "))
             tmp = sp.call('clear', shell=True)
