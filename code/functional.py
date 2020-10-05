@@ -1,7 +1,11 @@
 import pymysql
 from __main__  import cur,con
 
-def sel1(username):
+# pass me username of the person logged in and whether
+# that person is a Teacher (type = T) or student (type = S)
+
+# print course details and preferred textbooks
+def sel1(username, type):
     try:
         name = input("Enter Team Name: ")
         query = '''
@@ -28,7 +32,8 @@ def sel1(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-def sel2(username):
+# list members of the team
+def sel2(username, type):
     try:
         name = input("Enter Team Name: ")
         verify = '''
@@ -63,7 +68,8 @@ def sel2(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-def sel3(username):
+# list members of a meeting
+def sel3(username, type):
     try:
         team_name = input("Enter Team Name: ")
         channel_name = input("Enter Channel Name: ")
@@ -105,7 +111,8 @@ def sel3(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-def sel4(username):
+# find marks per question of a quiz
+def sel4(username, type):
 
     try:
         course_name = input("Enter Course Name: ")
@@ -138,7 +145,8 @@ def sel4(username):
         print(">>>>>>>>>>>>>", e)
 
 
-def proj1(username):
+# details of all students in a batch
+def proj1(username, type):
 
     try:
         batch = input("Enter Batch: ")
@@ -162,8 +170,8 @@ def proj1(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-# I am asssuming the view is already created in the format
-def proj2(username):
+# top 10 scoring students in a batch
+def proj2(username, type):
 
     try:
         batch = input("Enter Batch: ")
@@ -193,7 +201,8 @@ def proj2(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-def agg1(username):
+# average marks of students in quizzes for the course
+def agg1(username, type):
 
     try:
         course = input("Enter Course Name: ")
@@ -217,7 +226,8 @@ def agg1(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-def agg2(username):
+# attendance of the student
+def agg2(username, type):
 
     try:
 
@@ -244,7 +254,8 @@ def agg2(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-def search(username):
+# search student details
+def search(username, type):
 
     try:
         st_name = input("Search by Student Name: ")

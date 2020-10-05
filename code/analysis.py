@@ -1,9 +1,8 @@
 import pymysql
 from __main__  import cur,con
 
-
-# I am asssuming the view is already created in the format
-def analysis1(username):
+# Measure effectiveness of online teaching
+def analysis1(username, type):
 
     try:
         batch = input("Enter Batch: ")
@@ -47,8 +46,8 @@ def analysis1(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-
-def analysis2(username):
+# Student Report Card
+def analysis2(username, type):
 
     try:
         row_cnt = cur.execute("SELECT Roll_no FROM STUDENT WHERE Email_id = {};".format(username))
@@ -82,8 +81,8 @@ def analysis2(username):
         print("Query failed")
         print(">>>>>>>>>>>>>", e)
 
-
-def analysis3(username):
+# Relation between student's marks and attendance
+def analysis3(username, type):
 
     try:
         course = input("Type Course Name: ")
