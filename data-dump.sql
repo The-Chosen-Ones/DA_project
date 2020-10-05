@@ -279,6 +279,7 @@ CREATE TABLE `QUESANS` (
 
 LOCK TABLES `QUESANS` WRITE;
 /*!40000 ALTER TABLE `QUESANS` DISABLE KEYS */;
+INSERT INTO `QUESANS` VALUES (1,'Structured Query Language',10),(2,'Data and analysis',10),(3,'Data and analysis',10),(4,'pymysql',10),(5,'4nf',0),(5,'bcnf',10),(6,'can be',10),(7,'no',0),(7,'yes',10),(8,'no',10),(8,'yes',0),(9,'tuples',0),(10,'no',10),(11,'no',10),(12,'yes',10),(13,'no',10);
 /*!40000 ALTER TABLE `QUESANS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,6 +304,7 @@ CREATE TABLE `QUESTION` (
 
 LOCK TABLES `QUESTION` WRITE;
 /*!40000 ALTER TABLE `QUESTION` DISABLE KEYS */;
+INSERT INTO `QUESTION` VALUES (1,'SQL full form','CS.301.2020'),(2,'DA full form','CS.301.2020'),(3,'DnA full form','CS.301.2020'),(4,'library to use SQL in python','CS.301.2020'),(5,'Normaliation done after 3NF','CS.301.2020'),(6,'is super key a key','CS.301.2020'),(7,'is key a super key','CS.301.2020'),(8,'can null be a key','CS.301.2020'),(9,'rows are also called __?','CS.301.2020'),(10,'is order of rows fixed in relational model?','CS.301.2020'),(11,'is order of columns fixed in relational model?','CS.301.2020'),(12,'Cartesian product may not produce null set. is it right?','CS.301.2020'),(13,'Cartesian product can not produce null set. is it right?','CS.301.2020');
 /*!40000 ALTER TABLE `QUESTION` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -327,6 +329,7 @@ CREATE TABLE `QUIZ` (
 
 LOCK TABLES `QUIZ` WRITE;
 /*!40000 ALTER TABLE `QUIZ` DISABLE KEYS */;
+INSERT INTO `QUIZ` VALUES (1,'CS.301.2020',5);
 /*!40000 ALTER TABLE `QUIZ` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -345,7 +348,6 @@ CREATE TABLE `RESPONSE` (
   `Inst_Email_id` varchar(255) NOT NULL,
   `Answer` varchar(255) NOT NULL,
   PRIMARY KEY (`Quiz_no`,`Course_name`,`Q_id`,`SRoll_no`,`Inst_Email_id`),
-  UNIQUE KEY `Answer` (`Answer`),
   KEY `SRoll_no` (`SRoll_no`),
   KEY `Inst_Email_id` (`Inst_Email_id`),
   KEY `Q_id` (`Q_id`,`Answer`),
@@ -455,4 +457,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-05 17:05:28
+-- Dump completed on 2020-10-05 19:28:39
