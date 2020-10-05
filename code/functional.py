@@ -1,14 +1,8 @@
 import pymysql
-from __main__ import con
-
-# pass me username of the person logged in and whether
-# that person is a Teacher (type = T) or student (type = S)
 
 
 # print course details and preferred textbooks
-
-
-def sel1():
+def sel1(con):
     with con.cursor() as cur:
         try:
             username = input("Enter email:")
@@ -38,9 +32,8 @@ def sel1():
             print(">>>>>>>>>>>>>", e)
 
 
-
 # list members of the team
-def sel2():
+def sel2(con):
     with con.cursor() as cur:
         try:
             name = input("Enter Team Name: ")
@@ -65,9 +58,8 @@ def sel2():
             print(">>>>>>>>>>>>>", e)
 
 
-
 # list members of a meeting
-def sel3():
+def sel3(con):
     with con.cursor() as cur:
         try:
             username = input("Enter email: ")
@@ -112,9 +104,8 @@ def sel3():
             print(">>>>>>>>>>>>>", e)
 
 
-
 # find marks per question of a quiz
-def sel4():
+def sel4(con):
     with con.cursor() as cur:
         try:
             username = input("Enter email: ")
@@ -149,7 +140,7 @@ def sel4():
 
 
 # details of all students in a batch
-def proj1():
+def proj1(con):
     with con.cursor() as cur:
         try:
             batch = input("Enter Batch: ")
@@ -175,9 +166,8 @@ def proj1():
             print(">>>>>>>>>>>>>", e)
 
 
-
 # top 10 scoring students in a batch
-def proj2():
+def proj2(con):
     with con.cursor() as cur:
         try:
             batch = input("Enter Batch: ")
@@ -209,9 +199,8 @@ def proj2():
             print(">>>>>>>>>>>>>", e)
 
 
-
 # average marks of students in quizzes for the course
-def agg1():
+def agg1(con):
     with con.cursor() as cur:
         try:
             course = input("Enter Course Name: ")
@@ -236,9 +225,8 @@ def agg1():
             print(">>>>>>>>>>>>>", e)
 
 
-
 # attendance of the student
-def agg2():
+def agg2(con):
     with con.cursor() as cur:
         try:
             username = input("Eneter email: ")
@@ -267,9 +255,8 @@ def agg2():
             print(">>>>>>>>>>>>>", e)
 
 
-
 # search student details
-def search(username, type):
+def search(con):
     with con.cursor() as cur:
         try:
             st_name = input("Search by Student Name: ")
