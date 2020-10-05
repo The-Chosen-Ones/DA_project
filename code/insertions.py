@@ -114,5 +114,9 @@ def insert_question(con, row: dict, DEBUG=False):
     return general_insertion(con, "QUESTION", row, DEBUG)
 
 
+def insert_quesans(con, row: dict, DEBUG=False):
+    return general_insertion(con, "QUESANS", row, DEBUG)
+
+
 def insert_address(con, row: dict, DEBUG=False):
-    return general_insertion(con, "QUESTION", row, DEBUG)
+    return general_insertion(con, "ADDRESS", row, DEBUG)
