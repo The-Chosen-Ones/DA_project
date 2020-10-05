@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 8.0.21, for Linux (x86_64)
 --
--- Host: localhost    Database: DfOEP
+-- Host: 127.0.0.1    Database: DfOEP
 -- ------------------------------------------------------
--- Server version	8.0.21-0ubuntu0.20.04.4
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,6 +39,7 @@ CREATE TABLE `ACCOUNT` (
 
 LOCK TABLES `ACCOUNT` WRITE;
 /*!40000 ALTER TABLE `ACCOUNT` DISABLE KEYS */;
+INSERT INTO `ACCOUNT` VALUES ('ahmad@mail.com','Ahmad','Jabbar','passahma','9827781009','M'),('alecia@mail.com','Alecia','Zeleya','passalec','2123456789','F'),('fank@mail.com','Franklin','Wong','passfran','2023456789','M'),('james@mail.com','James','Borge','passjame','9827781000','M'),('jennifer@mail.com','Jennifer','Wallace','passjenn','2123456009','F'),('joe@mail.com','Joe','Cook','passjoec','9827701000','M'),('john@mail.com','John','Smith','passjohn','1023456789','M'),('joyce@mail.com','Joyce','English','passjoyc','9823334009','F'),('profDA101@mail.com','William','Shaw','passwill','9827701410','M'),('ramesh@mail.com','Ramesh','Narayan','passrame','2123334009','M'),('steve@mail.com','Steve','Gates','passstev','9827701010','M'),('ta_1DA101@mail.com','Sheldon','Cooper','passshel','9817701410','M'),('ta_2DA101@mail.com','Lilly','','passshel','9817703310','F');
 /*!40000 ALTER TABLE `ACCOUNT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,6 +64,7 @@ CREATE TABLE `ADDRESS` (
 
 LOCK TABLES `ADDRESS` WRITE;
 /*!40000 ALTER TABLE `ADDRESS` DISABLE KEYS */;
+INSERT INTO `ADDRESS` VALUES ('ahmad@mail.com','Dallas, Houston, TX'),('ahmad@mail.com','room 139'),('alecia@mail.com','pinto road, state abc'),('alecia@mail.com','room 919'),('fank@mail.com','city qwerty, state abc'),('fank@mail.com','room 119'),('james@mail.com','room 131'),('james@mail.com','Stone, Houston, TX'),('jennifer@mail.com','Berry, Bellaire, TX'),('jennifer@mail.com','room 919'),('joe@mail.com','room 131'),('joe@mail.com','Stair, Houston, TX'),('john@mail.com','city xyz, state abc'),('john@mail.com','room 109'),('joyce@mail.com','Rice, Houston, TX'),('joyce@mail.com','room 939'),('profDA101@mail.com','Flat 134, TX'),('ramesh@mail.com','FireOak, Humble, TX'),('ramesh@mail.com','room 129'),('steve@mail.com','room 134'),('steve@mail.com','Will road, CA'),('ta_1DA101@mail.com','Flat D4, CA'),('ta_2DA101@mail.com','Room 923, CA');
 /*!40000 ALTER TABLE `ADDRESS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,6 +95,7 @@ CREATE TABLE `ATTENDS` (
 
 LOCK TABLES `ATTENDS` WRITE;
 /*!40000 ALTER TABLE `ATTENDS` DISABLE KEYS */;
+INSERT INTO `ATTENDS` VALUES ('Data_Analysis','General','profDA101@mail.com',1010202030,'2020-10-05 11:00:00'),('Data_Analysis','Tutorials','ta_1DA101@mail.com',1010202030,'2020-10-09 13:00:00'),('Data_Analysis','Tutorials','ta_2DA101@mail.com',1010202030,'2020-10-02 13:00:00'),('Data_Analysis','General','profDA101@mail.com',1010202040,'2020-10-01 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010202040,'2020-10-03 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010202040,'2020-10-05 11:00:00'),('Data_Analysis','Tutorials','ta_1DA101@mail.com',1010202040,'2020-10-09 13:00:00'),('Data_Analysis','Tutorials','ta_2DA101@mail.com',1010202040,'2020-10-02 13:00:00'),('Data_Analysis','General','profDA101@mail.com',1010404040,'2020-10-03 11:00:00'),('Data_Analysis','Tutorials','ta_1DA101@mail.com',1010404040,'2020-10-09 13:00:00'),('Data_Analysis','General','profDA101@mail.com',1010604040,'2020-10-01 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010604940,'2020-10-01 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010604940,'2020-10-03 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010604940,'2020-10-05 11:00:00'),('Data_Analysis','Tutorials','ta_1DA101@mail.com',1010604940,'2020-10-09 13:00:00'),('Data_Analysis','Tutorials','ta_2DA101@mail.com',1010604940,'2020-10-02 13:00:00'),('Data_Analysis','General','profDA101@mail.com',1010604943,'2020-10-01 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010604943,'2020-10-03 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010604943,'2020-10-05 11:00:00'),('Data_Analysis','Tutorials','ta_2DA101@mail.com',1010604943,'2020-10-02 13:00:00'),('Data_Analysis','General','profDA101@mail.com',1010605043,'2020-10-03 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1010605043,'2020-10-05 11:00:00'),('Data_Analysis','Tutorials','ta_1DA101@mail.com',1010605143,'2020-10-09 13:00:00'),('Data_Analysis','Tutorials','ta_2DA101@mail.com',1010605143,'2020-10-02 13:00:00'),('Data_Analysis','General','profDA101@mail.com',1020402040,'2020-10-01 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1020402040,'2020-10-03 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1020402040,'2020-10-05 11:00:00'),('Data_Analysis','Tutorials','ta_1DA101@mail.com',1020402040,'2020-10-09 13:00:00'),('Data_Analysis','Tutorials','ta_2DA101@mail.com',1020402040,'2020-10-02 13:00:00'),('Data_Analysis','General','profDA101@mail.com',1020404040,'2020-10-01 11:00:00'),('Data_Analysis','General','profDA101@mail.com',1020404040,'2020-10-05 11:00:00');
 /*!40000 ALTER TABLE `ATTENDS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,6 +120,7 @@ CREATE TABLE `CHANNEL` (
 
 LOCK TABLES `CHANNEL` WRITE;
 /*!40000 ALTER TABLE `CHANNEL` DISABLE KEYS */;
+INSERT INTO `CHANNEL` VALUES ('Data_Analysis','General'),('Data_Analysis','Tutorials');
 /*!40000 ALTER TABLE `CHANNEL` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,6 +145,7 @@ CREATE TABLE `DEGREE` (
 
 LOCK TABLES `DEGREE` WRITE;
 /*!40000 ALTER TABLE `DEGREE` DISABLE KEYS */;
+INSERT INTO `DEGREE` VALUES ('profDA101@mail.com','Btech'),('profDA101@mail.com','Mtech'),('profDA101@mail.com','Phd'),('ta_1DA101@mail.com','Btech'),('ta_2DA101@mail.com','Btech');
 /*!40000 ALTER TABLE `DEGREE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,6 +197,7 @@ CREATE TABLE `INSTRUCTOR` (
 
 LOCK TABLES `INSTRUCTOR` WRITE;
 /*!40000 ALTER TABLE `INSTRUCTOR` DISABLE KEYS */;
+INSERT INTO `INSTRUCTOR` VALUES ('profDA101@mail.com','profDA101@mail.com'),('ta_1DA101@mail.com','profDA101@mail.com'),('ta_2DA101@mail.com','profDA101@mail.com');
 /*!40000 ALTER TABLE `INSTRUCTOR` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,6 +227,7 @@ CREATE TABLE `MEETING` (
 
 LOCK TABLES `MEETING` WRITE;
 /*!40000 ALTER TABLE `MEETING` DISABLE KEYS */;
+INSERT INTO `MEETING` VALUES ('Data_Analysis','General','profDA101@mail.com','2020-10-01 11:00:00','2020-10-01 12:00:00'),('Data_Analysis','General','profDA101@mail.com','2020-10-03 11:00:00','2020-10-03 12:00:00'),('Data_Analysis','General','profDA101@mail.com','2020-10-05 11:00:00','2020-10-05 12:00:00'),('Data_Analysis','Tutorials','ta_1DA101@mail.com','2020-10-09 13:00:00','2020-10-09 14:30:00'),('Data_Analysis','Tutorials','ta_2DA101@mail.com','2020-10-02 13:00:00','2020-10-02 14:30:00');
 /*!40000 ALTER TABLE `MEETING` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,6 +254,7 @@ CREATE TABLE `MEMBERSHIP` (
 
 LOCK TABLES `MEMBERSHIP` WRITE;
 /*!40000 ALTER TABLE `MEMBERSHIP` DISABLE KEYS */;
+INSERT INTO `MEMBERSHIP` VALUES ('Data_Analysis','ahmad@mail.com'),('Data_Analysis','alecia@mail.com'),('Data_Analysis','fank@mail.com'),('Data_Analysis','james@mail.com'),('Data_Analysis','jennifer@mail.com'),('Data_Analysis','joe@mail.com'),('Data_Analysis','john@mail.com'),('Data_Analysis','joyce@mail.com'),('Data_Analysis','ramesh@mail.com'),('Data_Analysis','steve@mail.com');
 /*!40000 ALTER TABLE `MEMBERSHIP` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,6 +389,7 @@ CREATE TABLE `STUDENT` (
 
 LOCK TABLES `STUDENT` WRITE;
 /*!40000 ALTER TABLE `STUDENT` DISABLE KEYS */;
+INSERT INTO `STUDENT` VALUES ('ahmad@mail.com',1010604940,'cse'),('alecia@mail.com',1020402040,'cse'),('fank@mail.com',1010202040,'cse'),('james@mail.com',1010604943,'ece'),('jennifer@mail.com',1020404040,'ece'),('joe@mail.com',1010605043,'cse'),('john@mail.com',1010202030,'cse'),('joyce@mail.com',1010604040,'cse'),('ramesh@mail.com',1010404040,'ece'),('steve@mail.com',1010605143,'ece');
 /*!40000 ALTER TABLE `STUDENT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -408,6 +417,7 @@ CREATE TABLE `TEAM` (
 
 LOCK TABLES `TEAM` WRITE;
 /*!40000 ALTER TABLE `TEAM` DISABLE KEYS */;
+INSERT INTO `TEAM` VALUES ('Data_Analysis','CS.301.2020','data and analysis and SQL','profDA101@mail.com');
 /*!40000 ALTER TABLE `TEAM` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -432,6 +442,7 @@ CREATE TABLE `TEXTBOOK` (
 
 LOCK TABLES `TEXTBOOK` WRITE;
 /*!40000 ALTER TABLE `TEXTBOOK` DISABLE KEYS */;
+INSERT INTO `TEXTBOOK` VALUES ('Data_Analysis','Fundamentals of DA'),('Data_Analysis','SQL Basics');
 /*!40000 ALTER TABLE `TEXTBOOK` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -444,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-04 14:58:05
+-- Dump completed on 2020-10-05 17:05:28
