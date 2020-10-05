@@ -29,7 +29,7 @@ def general_insertion(con, table: str, row: dict, DEBUG=False):
             return str(e)
 
 
-def insert_acccount(con, row: dict, subclass, DEBUG=False):
+def insert_account(con, row: dict, subclass, DEBUG=False):
     if subclass not in {"INSTRUCTOR", "STUDENT"}:
         return "error in subclass"
 

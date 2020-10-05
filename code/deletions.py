@@ -3,7 +3,7 @@ from db_description import SUCCESS_CODE
 
 
 def delete_account(con, email: str, DEBUG=False):
-    query = f"DELETE FROM ACCOUNT WHERE Email_id= {email}"
+    query = f"DELETE FROM ACCOUNT WHERE Email_id= '{email}'"
     if DEBUG:
         print(query)
     with con.cursor() as cur:
