@@ -1,9 +1,8 @@
 import pymysql
-from __main__ import con
 
 
 # Measure effectiveness of online teaching
-def analysis1():
+def analysis1(con):
     with con.cursor() as cur:
         try:
             batch = input("Enter Batch: ")
@@ -55,7 +54,7 @@ def analysis1():
 
 
 # Student Report Card
-def analysis2():
+def analysis2(con):
     with con.cursor() as cur:
         try:
             username = input("Enter Email:")
@@ -93,7 +92,7 @@ def analysis2():
 
 
 # Relation between student's marks and attendance
-def analysis3():
+def analysis3(con):
     with con.cursor() as cur:
         try:
             course = input("Type Course Name: ")
