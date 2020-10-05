@@ -223,11 +223,16 @@ def dispatch(ch):
 while(1):
     tmp = sp.call('clear', shell=True)
 
-    username = "pranjai"
-    password = "Pranjai@2606"
+    username = input("Enter username:")
+    password = input("Enter password:")
+    port = input("Enter port num(leave blank for default):")
+    if port == "":
+        port = 3306
+    else:
+        port = int(port)
 
     try:
-        con = pymysql.connect(host='localhost', user=username, password=password,
+        con = pymysql.connect(host='localhost', user=username, password=password, port=port,
                               db='DfOEP', cursorclass=pymysql.cursors.DictCursor)
         tmp = sp.call('clear', shell=True)
 
@@ -240,7 +245,7 @@ while(1):
 
         while(1):
             tmp = sp.call('clear', shell=True)
-
+            print("0. Exit")
             print("1. Create a new Account.")
             print("2. Create a new Team.")
             print("3. Add Member to a Team.")
@@ -259,7 +264,7 @@ while(1):
 
             ch = int(input("Enter choice > "))
             tmp = sp.call('clear', shell=True)
-            if ch == 10:
+            if ch == 0:
                 break
             else:
                 dispatch(ch)
@@ -269,3 +274,4 @@ while(1):
         tmp = sp.call('clear', shell=True)
         print("Connection Refused: Either username or password is incorrect or user doesn't have access to database")
         tmp = input("Enter any key to CONTINUE>")
+        break
