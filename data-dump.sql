@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 8.0.21, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: DfOEP
+-- Host: localhost    Database: DfOEP
 -- ------------------------------------------------------
--- Server version	8.0.21
+-- Server version	8.0.21-0ubuntu0.20.04.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -335,6 +335,21 @@ INSERT INTO `QUIZ` VALUES (1,'CS.301.2020',5);
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `QUIZMARKS`
+--
+
+DROP TABLE IF EXISTS `QUIZMARKS`;
+/*!50001 DROP VIEW IF EXISTS `QUIZMARKS`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `QUIZMARKS` AS SELECT 
+ 1 AS `Course_name`,
+ 1 AS `SRoll_no`,
+ 1 AS `Quiz_no`,
+ 1 AS `Total_marks`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `RESPONSE`
 --
 
@@ -449,6 +464,24 @@ LOCK TABLES `TEXTBOOK` WRITE;
 INSERT INTO `TEXTBOOK` VALUES ('Data_Analysis','Fundamentals of DA'),('Data_Analysis','SQL Basics');
 /*!40000 ALTER TABLE `TEXTBOOK` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Final view structure for view `QUIZMARKS`
+--
+
+/*!50001 DROP VIEW IF EXISTS `QUIZMARKS`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `QUIZMARKS` AS select `RESPONSE`.`Course_name` AS `Course_name`,`RESPONSE`.`SRoll_no` AS `SRoll_no`,`RESPONSE`.`Quiz_no` AS `Quiz_no`,sum(`QUESANS`.`Marks`) AS `Total_marks` from (`RESPONSE` join `QUESANS` on(((`RESPONSE`.`Q_id` = `QUESANS`.`Q_id`) and (`RESPONSE`.`Answer` = `QUESANS`.`Answer`)))) group by `RESPONSE`.`Course_name`,`RESPONSE`.`SRoll_no`,`RESPONSE`.`Quiz_no` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -459,4 +492,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-05 23:45:46
+-- Dump completed on 2020-10-06  0:30:27
