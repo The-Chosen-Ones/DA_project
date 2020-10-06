@@ -84,7 +84,7 @@ def sel3(con):
             query = '''
             SELECT A.First_name, A.Family_name, A.Email_id
             FROM ACCOUNT AS A
-            WHERE A.Email_id = '{2}' OR 
+            WHERE A.Email_id = '{2}' OR
             A.Email_id IN ( SELECT S.Email_id
                             FROM STUDENT AS S
                             WHERE S.Roll_no IN ( SELECT AT.SRoll_no
@@ -259,7 +259,8 @@ def agg2(con):
                 print("Roll Number \t Number of Meets attended")
                 result = cur.fetchall()
                 for x in result:
-                    print("{:<10} \t {:<10}", x['SRoll_no'], x['Count(*)'])
+                    print("{:<10} \t {:<10}".format(
+                        x['SRoll_no'], x['Count(*)']))
             else:
                 print("No attendance")
 
