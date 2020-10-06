@@ -19,29 +19,30 @@ def analysis1(con):
                 # list no_of_st = [below 50, 50-60, 60-70, 70-80, 80-90, 90-100]
                 no_of_st = [0, 0, 0, 0, 0, 0]
                 for x in result:
-                    if x['AVG(Total_marks)'] < 50:
+                    if x['AVG(QR.Total_marks)'] < 50:
                         no_of_st[0] += 1
-                    elif x['AVG(Total_marks)'] < 60:
+                    elif x['AVG(QR.Total_marks)'] < 60:
                         no_of_st[1] += 1
-                    elif x['AVG(Total_marks)'] < 70:
+                    elif x['AVG(QR.Total_marks)'] < 70:
                         no_of_st[2] += 1
-                    elif x['AVG(Total_marks)'] < 80:
+                    elif x['AVG(QR.Total_marks)'] < 80:
                         no_of_st[3] += 1
-                    elif x['AVG(Total_marks)'] < 90:
+                    elif x['AVG(QR.Total_marks)'] < 90:
                         no_of_st[4] += 1
                     else:
                         no_of_st[5] += 1
-                print("No of students below 50:              {}".format(
+                print("No. of students with avergage marks:")
+                print("below 50:              {}".format(
                     no_of_st[0]))
-                print("No of students above 50 but below 60: {}".format(
+                print("above 50 but below 60: {}".format(
                     no_of_st[1]))
-                print("No of students above 60 but below 70: {}".format(
+                print("above 60 but below 70: {}".format(
                     no_of_st[2]))
-                print("No of students above 70 but below 80: {}".format(
+                print("above 70 but below 80: {}".format(
                     no_of_st[3]))
-                print("No of students above 80 but below 90: {}".format(
+                print("above 80 but below 90: {}".format(
                     no_of_st[4]))
-                print("No of students above 90             : {}".format(
+                print("above 90             : {}".format(
                     no_of_st[5]))
 
             else:
