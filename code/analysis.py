@@ -68,7 +68,6 @@ def analysis2(con):
             FROM QUIZRESULT AS QR
             WHERE QR.SRoll_no = {}
             GROUP BY QR.SRoll_no, QR.Course_name;'''.format(SRoll_no)
-            print(query)
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
