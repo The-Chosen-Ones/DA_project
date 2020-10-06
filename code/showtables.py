@@ -11,9 +11,10 @@ def show1(con):
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
-                print("Email ID \t First Name \t Family Name \t Mobile \t Sex")
+                print("{:<16} \t {:<24} \t {:<24} \t {:<10} \t {:<10} \n"
+                      "".format('Email_id', 'First_name', 'Family_name', 'Mobile',  'Sex'))
                 for x in result:
-                    print("{:<10} \t {:<10} \t {:<10} \t {:<10} \t {:<10}"
+                    print("{:<16} \t {:<24} \t {:<24} \t {:<10} \t {:<10}"
                           "".format(x['Email_id'], x['First_name'], x['Family_name'], x['Mobile'],  x['Sex']))
             else:
                 print("No accounts")
@@ -38,7 +39,8 @@ def show2(con):
                 result = cur.fetchall()
                 print("Email_id \t Addresses")
                 for x in result:
-                    print("{:<10} \t {:<10}".format(x['Email_id'], x['Address']))
+                    print("{:<10} \t {:<10}".format(
+                        x['Email_id'], x['Address']))
             else:
                 print("No address")
 
@@ -58,9 +60,11 @@ def show3(con):
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
-                print("Email ID \t Roll Number \t Batch")
+                print("{:<20} \t {:<10} \t {:<10}\n".format(
+                    'Email_id', 'Roll_no', 'Batch'))
                 for x in result:
-                    print("{:<10} \t {:<10} \t {:<10}".format(x['Email_id'], x['Roll_no'], x['Batch']))
+                    print("{:<20} \t {:<10} \t {:<10}".format(
+                        x['Email_id'], x['Roll_no'], x['Batch']))
             else:
                 print("No student")
 
@@ -80,9 +84,11 @@ def show4(con):
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
-                print("Email ID \t Superior Email ID")
+                print("{:<20} \t {:<10}".format(
+                    'Email_id', 'Sup_id'))
                 for x in result:
-                    print("{:<10} \t {:<10}".format(x['Email_id'], x['Sup_id']))
+                    print("{:<20} \t {:<10}".format(
+                        x['Email_id'], x['Sup_id']))
             else:
                 print("No instructor")
 
@@ -104,9 +110,11 @@ def show5(con):
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
-                print("Email_id \t Degree")
+                print("{:<20} \t {:<10}\n".format(
+                    'Email_id', 'Degree'))
                 for x in result:
-                    print("{:<10} \t {:<10}".format(x['Email_id'], x['Degree']))
+                    print("{:<20} \t {:<10}".format(
+                        x['Email_id'], x['Degree']))
             else:
                 print("No degrees")
 
@@ -174,9 +182,11 @@ def show8(con):
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
-                print("Team Name \t Course Name \t Admin")
+                print("{:<20} \t {:<20} \t {:<10}\n".format(
+                    'Team_name', 'Course_name', 'Admin_id'))
                 for x in result:
-                    print("{:<10} \t {:<10} \t {:<10}".format(x['Team_name'], x['Course_name'], x['Admin_id']))
+                    print("{:<20} \t {:<20} \t {:<10}".format(
+                        x['Team_name'], x['Course_name'], x['Admin_id']))
             else:
                 print("No teams")
 
@@ -200,7 +210,8 @@ def show9(con):
                 result = cur.fetchall()
                 print("Quiz No \t Number of Questions")
                 for x in result:
-                    print("{:<10} \t {:<10}".format(x['Quiz_no'], x['No_of_qn']))
+                    print("{:<10} \t {:<10}".format(
+                        x['Quiz_no'], x['No_of_qn']))
             else:
                 print("No quizzes")
 

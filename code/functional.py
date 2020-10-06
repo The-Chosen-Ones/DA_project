@@ -162,9 +162,10 @@ def proj1(con):
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
-                print("EmailID \t First Name \t Family Name \t Mobile \t Sex")
+                print("{:<20} \t {:<24} \t {:<24} \t {:<10} \t {:<5}".format(
+                    'Email_id', 'First_name', 'Family_name', 'Mobile', 'Sex'))
                 for x in result:
-                    print("{:<10} \t {:<10} \t {:<10} \t {:<10} \t {:<10}".format(
+                    print("{:<20} \t {:<24} \t {:<24} \t {:<10} \t {:<5}".format(
                         x['Email_id'], x['First_name'], x['Family_name'], x['Mobile'], x['Sex']))
             else:
                 print("No student in the batch")

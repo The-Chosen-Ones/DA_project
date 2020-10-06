@@ -79,12 +79,12 @@ def analysis2(con):
                 for x in result:
                     total += x['AVG(QR.Total_marks)']
                     print("{:<10} \t {:<10}".format(
-                        x['Course_name'], x['AVG(QR.Total_marks)']))
+                        x['Course_name'], round(x['AVG(QR.Total_marks)'], 2)))
                     count += 1
                 sg = (total/count + 5) / 10
                 if sg > 10:
                     sg = 10
-                print("SGPA = {}".format(sg))
+                print("SGPA = {}".format(round(sg, 2)))
 
             else:
                 print("No quiz given")
