@@ -11,7 +11,7 @@ def analysis1(con):
             FROM QUIZRESULT AS QR
             WHERE QR.SRoll_no IN (SELECT S.SRoll_no
                                     FROM STUDENTS AS S
-                                    WHERE S.Batch = {})
+                                    WHERE S.Batch = '{}')
             GROUP BY SRoll_no;'''.format(batch)
             cnt = cur.execute(query)
             if cnt > 0:
@@ -50,7 +50,8 @@ def analysis1(con):
         except Exception as e:
             con.rollback()
             print("Query failed")
-            print(">>>>>>>>>>>>>", e)
+            print("{} \n {}".format(e.args[0], e.args[1]))
+
 
 
 # Student Report Card
@@ -59,7 +60,7 @@ def analysis2(con):
         try:
             username = input("Enter Email:")
             cur.execute(
-                "SELECT Roll_no FROM STUDENT WHERE Email_id = {};".format(username))
+                "SELECT Roll_no FROM STUDENT WHERE Email_id = '{}';".format(username))
             result = cur.fetchall()
             SRoll_no = result[0][0]
 
@@ -88,7 +89,8 @@ def analysis2(con):
         except Exception as e:
             con.rollback()
             print("Query failed")
-            print(">>>>>>>>>>>>>", e)
+            print("{} \n {}".format(e.args[0], e.args[1]))
+
 
 
 # Relation between student's marks and attendance
@@ -97,13 +99,13 @@ def analysis3(con):
         try:
             course = input("Type Course Name: ")
             cur.execute(
-                "SELECT Team_name FROM TEAM WHERE Course_name = {};".format(course))
+                "SELECT Team_name FROM TEAM WHERE Course_name = '{}';".format(course))
             result = cur.fetchall()
             team = result[0][0]
             query = '''
             SELECT SRoll_no, Count(*)
             FROM ATTENDS
-            WHERE Team_name = {}
+            WHERE Team_name = '{}'
             GROUP BY SRoll_no
             ORDER BY COUNT(*) DESC;'''.format(team)
             cnt = cur.execute(query)
@@ -133,7 +135,7 @@ def analysis3(con):
             query = '''
             SELECT SRoll_no, AVG(Total_marks)
             FROM QUIZRESULT
-            WHERE Course_name = {}
+            WHERE Course_name = '{}'
             GROUP BY SRoll_no
             ORDER BY AVG(Total_marks) DESC;'''.format(course)
             cnt = cur.execute(query)
@@ -163,4 +165,5 @@ def analysis3(con):
         except Exception as e:
             con.rollback()
             print("Query failed")
-            print(">>>>>>>>>>>>>", e)
+            print("{} \n {}".format(e.args[0], e.args[1]))
+
