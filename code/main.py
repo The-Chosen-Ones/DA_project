@@ -250,8 +250,8 @@ con = []
 while(1):
     tmp = sp.call('clear', shell=True)
 
-    username = "root"
-    password = "blahblah"
+    username = input("Enter username:")
+    password = input("Enter password:")
     port = input("Enter port num(leave blank for default):")
     if port == "":
         port = 5005
