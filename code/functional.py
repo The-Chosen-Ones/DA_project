@@ -53,7 +53,8 @@ def sel2(con):
                 result = cur.fetchall()
                 print("First Name \t Family Name \t Email ID")
                 for x in result:
-                    print("{:<10} \t {:<10} \t {:<10}".format(x['First_name'], x['Family_name'], x['Email_id']))
+                    print("{:<10} \t {:<10} \t {:<10}".format(
+                        x['First_name'], x['Family_name'], x['Email_id']))
             else:
                 print("No such team name")
 
@@ -96,7 +97,8 @@ def sel3(con):
                 result = cur.fetchall()
                 print("First Name \t Family Name \t Email ID")
                 for x in result:
-                    print("{:<10} \t {:<10} \t {:<10}".format(x['First_name'], x['Family_name'], x['Email_id']))
+                    print("{:<10} \t {:<10} \t {:<10}".format(
+                        x['First_name'], x['Family_name'], x['Email_id']))
 
             else:
                 print("Nobody attended the meeting")
@@ -194,8 +196,11 @@ def proj2(con):
                     if result is None:
                         break
                     else:
+                        sg = (result['AVG(QR.Total_marks)'] + 5) / 10
+                        if sg > 10:
+                            sg = 10
                         print("{:<10} \t {:<10}".format(
-                            result['SRoll_no'], max((result['AVG(QR.Total_marks)'] + 5) / 10, 10)))
+                            result['SRoll_no'], sg))
 
             else:
                 print("No student in the batch")
@@ -221,7 +226,8 @@ def agg1(con):
                 result = cur.fetchall()
                 print("Quiz Number \t Average Marks")
                 for x in result:
-                    print("{:<10} \t {:<10}".format(x['Quiz_no'], x['AVG(QR.Total_marks)']))
+                    print("{:<10} \t {:<10}".format(
+                        x['Quiz_no'], x['AVG(QR.Total_marks)']))
 
             else:
                 print("No quizzes in the course yet")
@@ -286,4 +292,3 @@ def search(con):
             con.rollback()
             print("Query failed")
             print("{} \n {}".format(e.args[0], e.args[1]))
-
