@@ -1,0 +1,51 @@
+Team Name : The Chosen Ones
+Members :   Pratyanshu Pandey (2019101025)
+            Vedansh Mittal (2019101054)
+            Pranjai Srivastava (2019101026)
+
+How To Run:
+
+1. Dump the data-dump.sql file into your mysql database by
+    using command from the directory that contains data-dump.sql:
+    mysql -u usename -p password < data-dump.sql
+
+    OR use this for docker
+
+    mysql -h host -u root --port='port' -p < data-dump.sql
+
+2. run main.py in the code directory
+3. Enter your username and password for your mysql database.
+4. The default port for the server is 3306. Press ENTER if
+   you are not using any special port or enter the port you are using.
+5. The programme is now successfully running. Choose one of the options
+   you need to perform from the menu.
+
+Files:
+
+README : Info about the database
+
+data-dump.sql: The sqldump file used to load the schema and preloaded
+               data in you mysql database.
+
+code: The folder contains:
+
+    main.py: The programme containing the main while loop that prints the prompt
+             and connects the programme with the database.
+
+    db_description.py: A file to maintain the list of attributes of entities.
+
+    deletions.py : all the deletion operations are implemented here
+
+    insertions.py: all the insertion operations are implemented here.
+
+    updates.py: all the updating functions are implemented here.
+
+    validation.py: contains functions that validate if the data entered is from the right domain.
+
+    showtables.py: functions to display the data in the database.
+
+    functional.py: implements the retrieval section of functional requirements.
+
+    analysis.py: implements the analysis section of the functional requirements.
+
+    reads.py:
