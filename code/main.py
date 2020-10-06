@@ -92,6 +92,8 @@ def addAttendee():
     row['Channel_name'] = input("Channel Name: ")
     row['Org_id'] = input("Organiser Email_id: ")
     row['SRoll_no'] = int(input("Attendee Roll_no: "))
+    row['Start_time'] = input(
+        "Enter meeting start time (YYYY-MM-DD HH:MM:SS):")
 
     print(insert_attends(con, row, True))
 
