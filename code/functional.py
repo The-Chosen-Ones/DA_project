@@ -236,12 +236,13 @@ def agg1(con):
 def agg2(con):
     with con.cursor() as cur:
         try:
-            username = input("Enter email: ")
+            # username = input("Enter email: ")
             team_name = input("Enter Team Name: ")
-            cur.execute(
-                "SELECT SRoll_no FROM STUDENT WHERE Email_id = '{}';".format(username))
-            result = cur.fetchall()
-            SRoll_no = result[0][0]
+            SRoll_no = input("Enter Roll Number: ")
+            # cur.execute(
+            #     "SELECT SRoll_no FROM STUDENT WHERE Email_id = '{}';".format(username))
+            # result = cur.fetchall()
+            # SRoll_no = result[0][0]
             query = '''
             SELECT SRoll_no, Count(*)
             FROM ATTENDS
@@ -252,7 +253,7 @@ def agg2(con):
                 print("Roll Number \t Number of Meets attended")
                 result = cur.fetchall()
                 for x in result:
-                    print("{} \t {}", x[0], x[1])
+                    print("{:<10} \t {:<10}", x['SRoll_no'], x['Count(*)'])
             else:
                 print("No student in the batch")
 
@@ -260,7 +261,6 @@ def agg2(con):
             con.rollback()
             print("Query failed")
             print("{} \n {}".format(e.args[0], e.args[1]))
-
 
 
 # search student details
@@ -275,8 +275,10 @@ def search(con):
             cnt = cur.execute(query)
             if cnt > 0:
                 result = cur.fetchall()
+                print("EmailID \t First Name \t Family Name \t Mobile \t Sex")
                 for x in result:
-                    print(x)
+                    print("{:<10} \t {:<10} \t {:<10} \t {:<10} \t {:<10}".format(
+                        x['Email_id'], x['First_name'], x['Family_name'], x['Mobile'], x['Sex']))
             else:
                 print("No student in the batch with such a name")
 

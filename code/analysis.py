@@ -9,8 +9,8 @@ def analysis1(con):
             query = '''
             SELECT QR.SRoll_no, AVG(QR.Total_marks)
             FROM QUIZRESULT AS QR
-            WHERE QR.SRoll_no IN (SELECT S.SRoll_no
-                                    FROM STUDENTS AS S
+            WHERE QR.SRoll_no IN (SELECT S.Roll_no
+                                    FROM STUDENT AS S
                                     WHERE S.Batch = '{}')
             GROUP BY SRoll_no;'''.format(batch)
             cnt = cur.execute(query)
@@ -19,15 +19,15 @@ def analysis1(con):
                 # list no_of_st = [below 50, 50-60, 60-70, 70-80, 80-90, 90-100]
                 no_of_st = [0, 0, 0, 0, 0, 0]
                 for x in result:
-                    if x[1] < 50:
+                    if x['AVG(Total_marks)'] < 50:
                         no_of_st[0] += 1
-                    elif x[1] < 60:
+                    elif x['AVG(Total_marks)'] < 60:
                         no_of_st[1] += 1
-                    elif x[1] < 70:
+                    elif x['AVG(Total_marks)'] < 70:
                         no_of_st[2] += 1
-                    elif x[1] < 80:
+                    elif x['AVG(Total_marks)'] < 80:
                         no_of_st[3] += 1
-                    elif x[1] < 90:
+                    elif x['AVG(Total_marks)'] < 90:
                         no_of_st[4] += 1
                     else:
                         no_of_st[5] += 1
@@ -53,19 +53,18 @@ def analysis1(con):
             print("{} \n {}".format(e.args[0], e.args[1]))
 
 
-
 # Student Report Card
 def analysis2(con):
     with con.cursor() as cur:
         try:
-            username = input("Enter Email:")
-            cur.execute(
-                "SELECT Roll_no FROM STUDENT WHERE Email_id = '{}';".format(username))
-            result = cur.fetchall()
-            SRoll_no = result[0][0]
-
+            # username = input("Enter Email:")
+            # cur.execute(
+            #     "SELECT Roll_no FROM STUDENT WHERE Email_id = '{}';".format(username))
+            # result = cur.fetchall()
+            # SRoll_no = result[0][0]
+            SRoll_no = input("Enter Roll Number: ")
             query = '''
-            SELECT QR.SRoll_no, QR.Course_name QR.AVG(QR.Total_marks)
+            SELECT QR.SRoll_no, QR.Course_name AVG(QR.Total_marks)
             FROM QUIZRESULT AS QR
             WHERE QR.SRoll_no = {}
             GROUP BY QR.SRoll_no, QR.Course_name;'''.format(SRoll_no)
@@ -77,8 +76,8 @@ def analysis2(con):
                 print("Course Name \t Percentage")
                 count = 0
                 for x in result:
-                    total += x[2]
-                    print("{} \t {}".format(x[1], x[2]))
+                    total += x['AVG(Total_marks)']
+                    print("{:<10} \t {:<10}".format(x['Course_name'], x['AVG(Total_marks)']))
                     count += 1
 
                 print("SGPA = {}".format(max((total/count + 5) / 10, 10)))
@@ -90,7 +89,6 @@ def analysis2(con):
             con.rollback()
             print("Query failed")
             print("{} \n {}".format(e.args[0], e.args[1]))
-
 
 
 # Relation between student's marks and attendance
@@ -118,16 +116,16 @@ def analysis3(con):
                     if count > 20:
                         break
                     else:
-                        print("{} \t {}".format(x[0], x[1]))
+                        print("{:<10} \t {:<10}".format(x['SRoll_no'], x['Count(*)']))
                 print("20 least attending students")
                 print("Roll Number \t Attendance")
-                result = cur.fetchall()
+
                 count = 1
                 for x in reversed(result):
                     if count > 20:
                         break
                     else:
-                        print("{} \t {}".format(x[0], x[1]))
+                        print("{:<10} \t {:<10}".format(x['SRoll_no'], x['Count(*)']))
 
             else:
                 print("No student in the batch")
@@ -148,16 +146,17 @@ def analysis3(con):
                     if count > 20:
                         break
                     else:
-                        print("{} \t {}".format(x[0], x[1]))
+                        print("{:<10} \t {:<10}".format(x['SRoll_no'], x['AVG(Total_marks)']))
+
                 print("20 least scoring students")
                 print("Roll Number \t Percentage")
-                result = cur.fetchall()
+
                 count = 1
                 for x in reversed(result):
                     if count > 20:
                         break
                     else:
-                        print("{} \t {}".format(x[0], x[1]))
+                        print("{:<10} \t {:<10}".format(x['SRoll_no'], x['AVG(Total_marks)']))
 
             else:
                 print("No student in the batch")
