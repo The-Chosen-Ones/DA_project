@@ -255,7 +255,7 @@ def agg2(con):
                 for x in result:
                     print("{:<10} \t {:<10}", x['SRoll_no'], x['Count(*)'])
             else:
-                print("No student in the batch")
+                print("No attendance")
 
         except Exception as e:
             con.rollback()

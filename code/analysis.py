@@ -83,7 +83,7 @@ def analysis2(con):
                 print("SGPA = {}".format(max((total/count + 5) / 10, 10)))
 
             else:
-                print("No student in the batch")
+                print("No quiz given")
 
         except Exception as e:
             con.rollback()
@@ -128,7 +128,7 @@ def analysis3(con):
                         print("{:<10} \t {:<10}".format(x['SRoll_no'], x['Count(*)']))
 
             else:
-                print("No student in the batch")
+                print("No student in the course")
 
             query = '''
             SELECT SRoll_no, AVG(Total_marks)
@@ -159,7 +159,7 @@ def analysis3(con):
                         print("{:<10} \t {:<10}".format(x['SRoll_no'], x['AVG(Total_marks)']))
 
             else:
-                print("No student in the batch")
+                print("No student in the course")
 
         except Exception as e:
             con.rollback()
