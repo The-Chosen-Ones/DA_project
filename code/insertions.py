@@ -78,11 +78,22 @@ def insert_team(con, row: dict, DEBUG=False):
 
 
 def insert_response(con, row: dict, DEBUG=False):
-    for tb in {"RESPONSE", "QUESANS"}:
-        resp_row = {x: row[x] for x in Attributes[tb]}
-        ret = general_insertion(con, tb, resp_row, DEBUG)
+    qa_row = {x: row[x] for x in Attributes["QUESANS"]}
+    ans_present = 0
+    with con.cursor() as cur:
+        query = 'SELECT * FROM QUESANS WHERE Q_id = {} AND Answer = "{}" '.format(
+            row["Q_id"], row["Answer"])
+        if DEBUG:
+            print(query)
+        ans_present = cur.execute(query)
+    if not ans_present:
+        ret = general_insertion(con, "QUESANS", qa_row, DEBUG)
         if ret != SUCCESS_CODE:
             return ret
+    resp_row = {x: row[x] for x in Attributes["RESPONSE"]}
+    ret = general_insertion(con, "RESPONSE", resp_row, DEBUG)
+    if ret != SUCCESS_CODE:
+        return ret
     return SUCCESS_CODE
 
 
