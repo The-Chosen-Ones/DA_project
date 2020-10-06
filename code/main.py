@@ -6,6 +6,7 @@ from updates import *
 from deletions import *
 from functional import *
 from analysis import *
+from showtables import *
 
 
 def createAccount():
@@ -184,60 +185,78 @@ def deleteAccount():
 
 def dispatch(ch):
     try:
-        if(ch == 1):
+        if(ch == '1'):
             createAccount()
-        elif(ch == 2):
+        elif(ch == '2'):
             createTeam()
-        elif(ch == 3):
+        elif(ch == '3'):
             addMember()
-        elif(ch == 4):
+        elif(ch == '4'):
             createChannel()
-        elif(ch == 5):
+        elif(ch == '5'):
             addMeeting()
-        elif(ch == 6):
+        elif(ch == '6'):
             addAttendee()
-        elif(ch == 7):
+        elif(ch == '7'):
             addQuestion()
-        elif(ch == 8):
+        elif(ch == '8'):
             addAnswer()
-        elif(ch == 9):
+        elif(ch == '9'):
             addQuiz()
-        elif(ch == 10):
+        elif(ch == '10'):
             addQuizStudent()
-        elif(ch == 11):
+        elif(ch == '11'):
             addResponse()
-        elif(ch == 12):
+        elif(ch == '12'):
             updateMarks()
-        elif(ch == 13):
+        elif(ch == '13'):
             updateAddress()
-        elif(ch == 14):
+        elif(ch == '14'):
             updateMobile()
-        elif(ch == 15):
+        elif(ch == '15'):
             deleteAccount()
-        elif(ch == 16):
+        elif(ch == '16'):
             sel1(con)
-        elif(ch == 17):
+        elif(ch == '17'):
             sel2(con)
-        elif(ch == 18):
+        elif(ch == '18'):
             sel3(con)
-        elif(ch == 19):
+        elif(ch == '19'):
             sel4(con)
-        elif(ch == 20):
+        elif(ch == '20'):
             proj1(con)
-        elif(ch == 21):
+        elif(ch == '21'):
             proj2(con)
-        elif(ch == 22):
+        elif(ch == '22'):
             agg1(con)
-        elif(ch == 23):
+        elif(ch == '23'):
             agg2(con)
-        elif(ch == 24):
+        elif(ch == '24'):
             search(con)
-        elif(ch == 25):
+        elif(ch == '25'):
             analysis1(con)
-        elif(ch == 26):
+        elif(ch == '26'):
             analysis2(con)
-        elif(ch == 27):
+        elif(ch == '27'):
             analysis3(con)
+        elif(ch == '28'):
+            show1(con)
+        elif(ch == '29'):
+            show2(con)
+        elif(ch == '30'):
+            show3(con)
+        elif(ch == '31'):
+            show4(con)
+        elif(ch == '32'):
+            show5(con)
+        elif(ch == '33'):
+            show6(con)
+        elif(ch == '34'):
+            show7(con)
+        elif(ch == '35'):
+            show8(con)
+        elif(ch == '36'):
+            show9(con)
         else:
             print("Invalid Option")
 
@@ -275,6 +294,8 @@ while(1):
         while(1):
             tmp = sp.call('clear', shell=True)
             print("0. Exit")
+            print()
+            print("Insertions: ")
             print("1. Create a new Account.")
             print("2. Create a new Team.")
             print("3. Add Member to a Team.")
@@ -286,28 +307,54 @@ while(1):
             print("9. Add a Quiz.")
             print("10. Add Student who gives a Quiz.")
             print("11. Add Response for a Quiz.")
+            print()
+            print("Updations: ")
             print("12. Update Marks of a Question.")
             print("13. Update Address of an Account.")
             print("14. Update Mobile Number of an Account.")
+            print()
+            print("Deletions: ")
             print("15. Delete an Account.")
+            print()
+            print("Selections: ")
             print("16. Print Course Details and preferred textbooks of a Team.")
             print("17. List Members of a Team.")
             print("18. List Members of a Meeting.")
             print("19. Find Marks per Question of a Quiz.")
+            print()
+            print("Projections: ")
             print("20. Details of all Students in a Batch.")
             print("21 Top 10 scoring Students in a Batch.")
+            print()
+            print("Aggregate Functions: ")
             print("22. Average Marks of Students in Quizzes for the Course.")
-            print("23. Attendance of a Student")
+            print("23. Attendance of a Student.")
+            print()
+            print("Search Functions: ")
             print("24. Search Student Details.")
+            print()
+            print("Analysis: ")
             print("25. Measure effectiveness of online teaching.")
             print("26. Student Report Card.")
             print("27. Relation between Student's Marks and Attendance.")
+            print()
+            print("Show Tables: ")
+            print("28. List all Accounts in the database.")
+            print("29. Print Address of an Account.")
+            print("30. List all Students in the database.")
+            print("31. List all Instructors in the database.")
+            print("32. Print Degrees of an Instructor.")
+            print("33. List all Teams an Account is part of.")
+            print("34. List all Channels in a Team.")
+            print("35. List all Teams in the database.")
+            print("36. List all Quizzes in a Course.")
+            print()
 
-            ch = int(input("Enter choice > "))
+            ch = input("Enter choice > ")
             tmp = sp.call('clear', shell=True)
-            if ch == 0:
+            if ch == '0':
                 break
-            else:
+            elif(ch != ""):
                 dispatch(ch)
                 tmp = input("Enter any key to CONTINUE>")
 

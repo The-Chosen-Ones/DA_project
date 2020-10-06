@@ -16,6 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `DfOEP`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `DfOEP` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `DfOEP`;
+
+--
 -- Table structure for table `ACCOUNT`
 --
 
@@ -466,6 +474,12 @@ INSERT INTO `TEXTBOOK` VALUES ('Data_Analysis','Fundamentals of DA'),('Data_Anal
 UNLOCK TABLES;
 
 --
+-- Current Database: `DfOEP`
+--
+
+USE `DfOEP`;
+
+--
 -- Final view structure for view `QUIZRESULT`
 --
 
@@ -492,4 +506,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-06 13:09:17
+-- Dump completed on 2020-10-06 14:51:03
