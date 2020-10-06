@@ -47,5 +47,3 @@ code: The folder contains:
     functional.py: implements the retrieval section of functional requirements.
 
     analysis.py: implements the analysis section of the functional requirements.
-
-    reads.py:

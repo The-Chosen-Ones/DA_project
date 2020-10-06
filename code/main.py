@@ -36,7 +36,7 @@ def createAccount():
         for i in range(n):
             row['Degree'].append(input("Degree {}: ".format(i + 1)))
 
-    print(insert_account(con, row, subclass, True))
+    print(insert_account(con, row, subclass))
 
 
 def createTeam():
@@ -52,7 +52,7 @@ def createTeam():
     for i in range(n):
         row['Textbook'].append(input("Textbook {}: ".format(i + 1)))
 
-    print(insert_team(con, row, True))
+    print(insert_team(con, row))
 
 
 def createChannel():
@@ -73,7 +73,7 @@ def addMeeting():
     row['Start_time'] = input("Start Time (YYYY-MM-DD HH:MM:SS): ")
     row['End_time'] = input("End Time (YYYY-MM-DD HH:MM:SS): ")
 
-    print(insert_meeting(con, row, True))
+    print(insert_meeting(con, row))
 
 
 def addMember():
@@ -82,7 +82,7 @@ def addMember():
     row['Team_name'] = input("Team Name: ")
     row['Member_id'] = input("Member Email_id: ")
 
-    print(insert_membership(con, row, True))
+    print(insert_membership(con, row))
 
 
 def addAttendee():
@@ -95,7 +95,7 @@ def addAttendee():
     row['Start_time'] = input(
         "Enter meeting start time (YYYY-MM-DD HH:MM:SS):")
 
-    print(insert_attends(con, row, True))
+    print(insert_attends(con, row))
 
 
 def addQuestion():
@@ -105,7 +105,7 @@ def addQuestion():
     row['Qn_text'] = input("Question Text: ")
     row['Course_name'] = input("Course Name: ")
 
-    print(insert_question(con, row, True))
+    print(insert_question(con, row))
 
 
 def addAnswer():
@@ -115,7 +115,7 @@ def addAnswer():
     row['Answer'] = input("Answer: ")
     row['Marks'] = int(input("Marks: "))
 
-    print(insert_quesans(con, row, True))
+    print(insert_quesans(con, row))
 
 
 def addQuiz():
@@ -125,7 +125,7 @@ def addQuiz():
     row['Course_name'] = input("Course Name: ")
     row['No_of_qn'] = int(input("Number of Questions: "))
 
-    print(insert_quiz(con, row, True))
+    print(insert_quiz(con, row))
 
 
 def addQuizStudent():
@@ -135,7 +135,7 @@ def addQuizStudent():
     row['Quiz_no'] = int(input("Quiz_no: "))
     row['Course_name'] = input("Course Name: ")
 
-    print(insert_gives(con, row, True))
+    print(insert_gives(con, row))
 
 
 def addResponse():
@@ -149,7 +149,7 @@ def addResponse():
     row['Answer'] = input("Answer: ")
     row['Marks'] = int(input("Enter marks allotted:"))
 
-    print(insert_response(con, row, True))
+    print(insert_response(con, row))
 
 
 def updateMarks():
@@ -158,7 +158,7 @@ def updateMarks():
     ans = input("Answer: ")
     new_marks = int(input("New Marks: "))
 
-    print(update_marks(con, q_id, ans, new_marks, True))
+    print(update_marks(con, q_id, ans, new_marks))
 
 
 def updateAddress():
@@ -167,7 +167,7 @@ def updateAddress():
     old_add = input("Old Address: ")
     new_add = input("New Address: ")
 
-    print(update_address(con, email, old_add, new_add, True))
+    print(update_address(con, email, old_add, new_add))
 
 
 def updateMobile():
@@ -175,14 +175,14 @@ def updateMobile():
     email = input("Email_id: ")
     new_mob = input("New Mobile Number: ")
 
-    print(update_mobile(con, email, new_mob, True))
+    print(update_mobile(con, email, new_mob))
 
 
 def deleteAccount():
     print("Enter Details: ")
     email = input("Email_id: ")
 
-    print(delete_account(con, email, True))
+    print(delete_account(con, email))
 
 
 def dispatch(ch):
