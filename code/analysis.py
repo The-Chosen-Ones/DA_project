@@ -103,7 +103,7 @@ def analysis3(con):
             cur.execute(
                 "SELECT Team_name FROM TEAM WHERE Course_name = '{}';".format(course))
             result = cur.fetchall()
-            team = result[0][0]
+            team = result[0]['Team_name']
             query = '''
             SELECT SRoll_no, Count(*)
             FROM ATTENDS
