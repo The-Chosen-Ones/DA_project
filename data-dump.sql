@@ -335,14 +335,14 @@ INSERT INTO `QUIZ` VALUES (1,'CS.301.2020',5);
 UNLOCK TABLES;
 
 --
--- Temporary view structure for view `QUIZMARKS`
+-- Temporary view structure for view `QUIZRESULT`
 --
 
-DROP TABLE IF EXISTS `QUIZMARKS`;
-/*!50001 DROP VIEW IF EXISTS `QUIZMARKS`*/;
+DROP TABLE IF EXISTS `QUIZRESULT`;
+/*!50001 DROP VIEW IF EXISTS `QUIZRESULT`*/;
 SET @saved_cs_client     = @@character_set_client;
 /*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `QUIZMARKS` AS SELECT 
+/*!50001 CREATE VIEW `QUIZRESULT` AS SELECT 
  1 AS `Course_name`,
  1 AS `SRoll_no`,
  1 AS `Quiz_no`,
@@ -466,10 +466,10 @@ INSERT INTO `TEXTBOOK` VALUES ('Data_Analysis','Fundamentals of DA'),('Data_Anal
 UNLOCK TABLES;
 
 --
--- Final view structure for view `QUIZMARKS`
+-- Final view structure for view `QUIZRESULT`
 --
 
-/*!50001 DROP VIEW IF EXISTS `QUIZMARKS`*/;
+/*!50001 DROP VIEW IF EXISTS `QUIZRESULT`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
@@ -478,7 +478,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `QUIZMARKS` AS select `RESPONSE`.`Course_name` AS `Course_name`,`RESPONSE`.`SRoll_no` AS `SRoll_no`,`RESPONSE`.`Quiz_no` AS `Quiz_no`,sum(`QUESANS`.`Marks`) AS `Total_marks` from (`RESPONSE` join `QUESANS` on(((`RESPONSE`.`Q_id` = `QUESANS`.`Q_id`) and (`RESPONSE`.`Answer` = `QUESANS`.`Answer`)))) group by `RESPONSE`.`Course_name`,`RESPONSE`.`SRoll_no`,`RESPONSE`.`Quiz_no` */;
+/*!50001 VIEW `QUIZRESULT` AS select `RESPONSE`.`Course_name` AS `Course_name`,`RESPONSE`.`SRoll_no` AS `SRoll_no`,`RESPONSE`.`Quiz_no` AS `Quiz_no`,(sum((`QUESANS`.`Marks` * 10)) / `QUIZ`.`No_of_qn`) AS `Total_marks` from ((`RESPONSE` join `QUESANS` on(((`RESPONSE`.`Q_id` = `QUESANS`.`Q_id`) and (`RESPONSE`.`Answer` = `QUESANS`.`Answer`)))) join `QUIZ` on(((`RESPONSE`.`Quiz_no` = `QUIZ`.`Quiz_no`) and (`RESPONSE`.`Course_name` = `QUIZ`.`Course_name`)))) group by `RESPONSE`.`Course_name`,`RESPONSE`.`SRoll_no`,`RESPONSE`.`Quiz_no` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -492,4 +492,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-06  0:30:27
+-- Dump completed on 2020-10-06 13:09:17
