@@ -144,6 +144,7 @@ def addResponse():
     row['SRoll_no'] = int(input("Student Roll_no: "))
     row['Inst_Email_id'] = input("Instructor Email_id: ")
     row['Answer'] = input("Answer: ")
+    row['Marks'] = int(input("Enter marks allotted:"))
 
     print(insert_response(con, row, True))
 
