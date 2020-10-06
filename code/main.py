@@ -255,7 +255,7 @@ while(1):
     password = input("Enter password:")
     port = input("Enter port num(leave blank for default):")
     if port == "":
-        port = 5005
+        port = 3306
     else:
         port = int(port)
 
